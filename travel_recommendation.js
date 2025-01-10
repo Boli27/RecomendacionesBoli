@@ -21,7 +21,7 @@ btn_buscar.addEventListener("click", function (e) {
 
             // Switch para las palabras claves ingresadas
             switch (true) {
-                case keyword === "playa" || keyword=== "playas":
+                case keyword === "playa" || keyword=== "playas" || keyword === "beach" || keyword=== "beaches":
 
                     data.beaches.forEach(beach => {
                         resultados.innerHTML += `
@@ -42,7 +42,7 @@ btn_buscar.addEventListener("click", function (e) {
                     });
                     break;
 
-                case keyword === "templo" || keyword === "templos":
+                case keyword === "templo" || keyword === "templos" || keyword === "temple" || keyword === "temples":
 
                     data.temples.forEach(temple => {
                         resultados.innerHTML += `
@@ -63,7 +63,7 @@ btn_buscar.addEventListener("click", function (e) {
                     });
                     break;
 
-                case keyword === "pais" || keyword=== "paises":
+                case keyword === "pais" || keyword=== "paises" || keyword === "country" || keyword=== "countries":
 
                     data.countries.forEach(country => {
                         country.cities.forEach(city => {
