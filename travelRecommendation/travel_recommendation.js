@@ -22,7 +22,7 @@ btn_buscar.addEventListener("click", function (e) {
             // Switch para las palabras claves ingresadas
             switch (true) {
                 case keyword === "playa" || keyword=== "playas":
-                    // Mostrar tarjetas de playas
+
                     data.beaches.forEach(beach => {
                         resultados.innerHTML += `
                             <div class="card mb-3" style="max-width: 540px;">
@@ -43,7 +43,7 @@ btn_buscar.addEventListener("click", function (e) {
                     break;
 
                 case keyword === "templo" || keyword === "templos":
-                    // Mostrar tarjetas de templos
+
                     data.temples.forEach(temple => {
                         resultados.innerHTML += `
                             <div class="card mb-3" style="max-width: 540px;">
@@ -64,7 +64,7 @@ btn_buscar.addEventListener("click", function (e) {
                     break;
 
                 case keyword === "pais" || keyword=== "paises":
-                    // Mostrar tarjetas de países
+
                     data.countries.forEach(country => {
                         country.cities.forEach(city => {
                             resultados.innerHTML += `
@@ -87,7 +87,6 @@ btn_buscar.addEventListener("click", function (e) {
                     break;
 
                 default:
-                    // Si no se encuentra ninguna coincidencia
                     resultados.innerHTML = `<h2 class= "text-white bg-dark" >No se encontraron resultados para tu búsqueda.</h2>`;
                     break;
             }
