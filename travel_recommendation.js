@@ -86,6 +86,32 @@ btn_buscar.addEventListener("click", function (e) {
                     });
                     break;
 
+                    case data.countries.some(country => country.name.toLowerCase() === keyword):
+                       
+                        data.countries.forEach(country => {
+                            if (country.name.toLowerCase() === keyword) {
+                                resultados.innerHTML += `<h3 class="text-center text-black">${country.name}</h3>`;
+                                country.cities.forEach(city => {
+                                    resultados.innerHTML += `
+                                        <div class="card mb-3" style="max-width: 540px;">
+                                            <div class="row g-0">
+                                                <div class="col-md-4">
+                                                    <img src="${city.imageUrl}" class="img-fluid rounded-start" alt="${city.name}">
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">${city.name}</h5>
+                                                        <p class="card-text">${city.description}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    `;
+                                });
+                            }
+                        });
+                        break;
+
                 default:
                     resultados.innerHTML = `<h2 class= "text-white bg-dark" >No se encontraron resultados para tu búsqueda.</h2>`;
                     break;
